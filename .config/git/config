@@ -1,0 +1,21 @@
+[user]
+    name = Toby Fleming
+    email = tobywf@users.noreply.github.com
+[diff]
+    tool = meld
+[merge]
+    tool = meld
+[difftool]
+    prompt = false
+[mergetool]
+    prompt = false
+    keepBackup = false
+[push]
+    default = simple
+[alias]
+    pull = pull --rebase
+    serve = !git daemon --verbose --reuseaddr --export-all --strict-paths --base-path=.git .git/
+[core]
+    editor = vim
+[credential]
+    helper = osxkeychain

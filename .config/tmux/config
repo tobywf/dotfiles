@@ -1,0 +1,62 @@
+# mostly taken from https://mutelight.org/practical-tmux
+
+# set  prefix to ctrl+a
+unbind-key C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
+
+# ctrl+a,a to send prefix to nested client
+bind-key a send-prefix
+
+# select pane with alt+arrow key (without prefix)
+bind-key -n M-Left select-pane -L
+bind-key -n M-Right select-pane -R
+bind-key -n M-Up select-pane -U
+bind-key -n M-Down select-pane -D
+
+# set window index to start from 1, like screen
+set-option -g base-index 1
+# new panes default to this instead of current working directory
+set-option -g default-path ~/
+# maximum lines held in window history
+set-option -g history-limit 100000
+# need to set this so 256 color works
+set-option -g default-terminal screen-256color
+# quicker key sequences
+set-option -g escape-time 0
+
+# don't change window names
+set-window-option -g automatic-rename off
+
+# use vim keybindings in copy mode
+set-window-option -g mode-keys vi
+set-window-option -g utf8 on
+
+# setup 'v' to begin selection as in Vim
+bind-key -t vi-copy v begin-selection
+# linux: bind-key -t vi-copy y copy-pipe "xclip -sel c -i"
+# mac:
+bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+bind-key -t vi-copy C-v rectangle-toggle
+
+# mac: update default binding of `Enter` to also use copy-pipe
+unbind -t vi-copy Enter
+bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
+
+# clear status, optionally allow utf8
+set-option -g status-keys vi
+set-option -g status-utf8 on
+set-option -g status-left ""
+set-option -g status-right ""
+
+set-window-option -g window-status-current-bg blue
+
+#set-option -g mode-mouse off
+#set-option -g mouse-resize-pane off
+#set-option -g mouse-select-pane off
+#set-option -g mouse-select-window off
+#set-option -g mouse-utf8 on
+
+# stop freezing, see http://superuser.com/a/589896
+set-window-option -g c0-change-trigger 10
+set-window-option -g c0-change-interval 250

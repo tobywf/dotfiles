@@ -1,0 +1,30 @@
+#!/bin/bash
+# this script is not idempotent, be careful
+set -xeuo pipefail
+IFS=$'\n\t'
+
+# -- bootstrap part 1
+
+GITDIR="$HOME/.local/share/dotfiles"
+
+git clone --bare "https://github.com/tobywf/dotfiles.git" "$GITDIR"
+git --git-dir="$GITDIR" --work-tree="$HOME" \
+    config --local status.showUntrackedFiles no
+
+cd "$HOME"
+tar -xzvf "$1"
+
+git --git-dir="$GITDIR" --work-tree="$HOME" \
+    checkout -- "$HOME"
+
+# -- setup
+
+source dot-setup
+
+# -- bootstrap part 2
+
+open "$HOME/Applications/Divvy.app/"
+open "$HOME/Applications/Flux.app/"
+
+# restore insane divvy config
+open $(cat "$HOME/divvy.txt")

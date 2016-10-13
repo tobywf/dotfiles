@@ -1,0 +1,9 @@
+{
+    "python_interpreter": "/usr/local/bin/python3.4",
+    "auto_python_builder_enabled": false,
+    //"disable_anaconda_completion": true,
+    //"display_signatures": false,
+    //"pep8": false,
+    "pep8_max_line_length": 120,
+    //"anaconda_linting": false,
+}

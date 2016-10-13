@@ -1,0 +1,54 @@
+#!/bin/bash
+# this script should be idempotent
+set -xeuo pipefail
+IFS=$'\n\t'
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until scrip has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+# otherwise, `brew bundle` prompts for password multiple times -.-
+
+which brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+chmod 0700 "$HOME/.ssh/"
+find "$HOME/.ssh/" -maxdepth 0 -type f ! -name "*.pub" -exec chmod 0600 {} ';'
+find "$HOME/.ssh/" -maxdepth 0 -type f -name "*.pub" -exec chmod 0644 {} ';'
+
+mkdir -p "$HOME/.config/" "$HOME/.local/share/bin/"
+
+# don't overwrite if it already exists
+if [[ ! -f "$HOME/.config/Brewfile" ]]; then
+    git --git-dir="$HOME/.local/share/dotfiles/" --work-tree="$HOME" \
+        checkout -- "$HOME/.config/Brewfile"
+fi
+
+brew bundle --file="$HOME/.config/Brewfile"
+
+# setup fish shell
+FISH=$(which fish)
+
+if ! grep -qF "$FISH" /etc/shells; then
+    echo "$FISH" | sudo tee -a /etc/shells >/dev/null
+fi
+
+# don't need to change it it's already set
+if [[ "$SHELL" != "$FISH" ]]; then
+    chsh -s "$FISH"
+fi
+
+brew cleanup
+brew cask cleanup
+
+# don't need this
+rm -rf "$HOME/.bash_history" "$HOME/.bash_sessions/" "$HOME/.subversion/"
+
+# don't overwrite if it already exists
+if [[ ! -f "$HOME/.config/Homebrew.terminal" ]]; then
+    git --git-dir="$HOME/.local/share/dotfiles/" --work-tree="$HOME" \
+        checkout -- "$HOME/.config/Homebrew.terminal"
+fi
+
+source dot-macos

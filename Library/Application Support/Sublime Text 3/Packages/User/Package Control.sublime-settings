@@ -1,0 +1,17 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Anaconda",
+		"Flat Chameleon",
+		"GitGutter",
+		"Monokai Extended",
+		"NASM x86 Assembly",
+		"Package Control",
+		"Robot Framework Assistant",
+		"Theme - Flatland"
+	]
+}

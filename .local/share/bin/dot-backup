@@ -1,0 +1,26 @@
+#!/bin/bash
+# this script should be idempotent
+set -euo pipefail
+IFS=$'\n\t'
+
+# find latest 1password backup
+ONEPASS=$(cd "$HOME"; find "Library/Application Support/1Password 4/Backups/" -type f | tail -n 1)
+
+function cleanup {
+    rm -f "$HOME/divvy.txt"
+}
+trap cleanup EXIT
+
+# backup insane divvy config
+open "divvy://export" && pbpaste > "$HOME/divvy.txt"
+
+# compress our dotfile repo
+git --git-dir="$HOME/.local/share/dotfiles/" --work-tree="$HOME" gc 2>/dev/null
+
+# tar everything sensitive
+tar -czf "$HOME/backup-$(date +%Y-%m-%d).tar.gz" -C "$HOME" \
+    ".ssh/" ".pypirc" "divvy.txt" \
+    "$ONEPASS" \
+    "Library/Application Support/Sublime Text 3/Local/License.sublime_license" \
+    ".local/share/dotfiles/" \
+    ".local/share/fish/fish_history"
