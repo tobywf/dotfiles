@@ -14,13 +14,18 @@ trap cleanup EXIT
 # backup insane divvy config
 open "divvy://export" && pbpaste > "$HOME/divvy.txt"
 
-# compress our dotfile repo
-git --git-dir="$HOME/.local/share/dotfiles/" --work-tree="$HOME" gc 2>/dev/null
+# check if we have uncommitted changes which would be lost!
+if ! git --git-dir="$HOME/.local/share/dotfiles/" --work-tree="$HOME" \
+        diff-index --quiet HEAD --; then
+    echo >&2 "Uncommitted changes, these won't be backed up!"
+fi
 
 # tar everything sensitive
-tar -czf "$HOME/backup-$(date +%Y-%m-%d).tar.gz" -C "$HOME" \
+tar -czf "$HOME/backup-$(date +%Y-%m-%d).tar.gz" \
+    -C "$HOME" \
     ".ssh/" ".pypirc" "divvy.txt" \
     "$ONEPASS" \
     "Library/Application Support/Sublime Text 3/Local/License.sublime_license" \
-    ".local/share/dotfiles/" \
-    ".local/share/fish/fish_history"
+    ".local/share/fish/fish_history" \
+    -C "$HOME/.local/share/bin/" \
+    "dot-bootstrap" \
