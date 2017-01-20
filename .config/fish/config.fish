@@ -13,6 +13,13 @@ set -gx PIP_REQUIRE_VIRTUALENV true
 function gpip
     begin
         set -lx PIP_REQUIRE_VIRTUALENV
+        sudo -H /usr/local/bin/pip3 $argv
+    end
+end
+
+function gpip2
+    begin
+        set -lx PIP_REQUIRE_VIRTUALENV
         sudo -H /usr/local/bin/pip $argv
     end
 end

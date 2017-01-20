@@ -1,5 +1,5 @@
 {
-    "python_interpreter": "/usr/local/bin/python3.4",
+    "python_interpreter": "/usr/local/bin/python3",
     "auto_python_builder_enabled": false,
     //"disable_anaconda_completion": true,
     //"display_signatures": false,

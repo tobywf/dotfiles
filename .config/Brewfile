@@ -1,39 +1,45 @@
-# don't forget this if you're using casks
 tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'homebrew/dupes'
 tap 'homebrew/python'
 
 
-
+brew 'atomicparsley'
 brew 'coreutils', args: ['with-default-names']
 brew 'findutils', args: ['with-default-names']
-brew 'ffmpeg', args: ['with-faac,with-freetype']
+brew 'ffmpeg', args: ['with-faac', 'with-freetype']
 brew 'fish'
 brew 'git'
-brew 'grep', args: ['with-default-names']
-brew 'imagemagick', args: ['with-webp', 'with-librsvg']
+brew 'homebrew/dupes/grep', args: ['with-default-names']
+brew 'imagemagick', args: ['with-librsvg', 'with-webp']
 brew 'keybase'
 brew 'markdown'
 brew 'python', args: ['framework', 'with-brewed-openssl']
 brew 'python3', args: ['framework', 'with-brewed-openssl']
+brew 'rename'
 brew 'ssh-copy-id'
 brew 'tmux'
 brew 'tree'
-brew 'vim', args: ['override-system-vi']
-brew 'numpy', args: ['with-python3', 'without-python']
-brew 'scipy', args: ['with-python3', 'without-python']
-
+brew 'vim', args: ['with-override-system-vi']
+brew 'zopfli'
+brew 'homebrew/python/numpy', args: ['with-python3', 'without-python']
+brew 'homebrew/python/scipy', args: ['with-python3', 'without-python']
 
 
 cask_args appdir: '~/Applications'
+
+cask '1password'
+cask 'calibre'
+cask 'doxie'
+cask 'dropbox'
+cask 'flux'
 
 cask 'font-alegreya'
 cask 'font-alegreya-sans'
 cask 'font-alegreya-sans-sc'
 cask 'font-alegreya-sc'
+cask 'font-anonymice-powerline'
 cask 'font-anonymous-pro'
-cask 'font-anonymous-pro-for-powerline'
 cask 'font-arvo'
 cask 'font-cabin'
 cask 'font-cabin-condensed'
@@ -70,45 +76,40 @@ cask 'font-pt-sans'
 cask 'font-pt-serif'
 cask 'font-quicksand'
 cask 'font-raleway'
-#cask 'font-raleway-dots'
 cask 'font-roboto'
 cask 'font-roboto-condensed'
 cask 'font-roboto-mono'
 cask 'font-roboto-mono-for-powerline'
 cask 'font-roboto-slab'
-cask 'font-sauce-code-powerline'
 cask 'font-source-code-pro'
+cask 'font-source-code-pro-for-powerline'
 cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
-#cask 'font-telex'
 cask 'font-ubuntu'
-cask 'font-ubuntu-mono-powerline'
+cask 'font-ubuntu-mono-derivative-powerline'
 cask 'font-vollkorn'
 
-
-
-cask '1password'
-cask 'calibre'
-cask 'doxie'
-cask 'dropbox'
-cask 'flux'
 cask 'google-chrome'
-cask 'karabiner'
+cask 'karabiner-elements'
 cask 'keybase'
+cask 'mactex'
 # meld
 cask 'https://gist.githubusercontent.com/tobywf/f731a9aa9ebaec47bb098af9d90cb8b5/raw/1f6acffb47d89a1e9eb32fbb5acea7bd4a065575/meldmerge.rb'
-cask 'spotify'
-cask 'steam'
-cask 'sublime-text'
-cask 'vlc'
 cask 'qlcolorcode'
 cask 'qlimagesize'
 cask 'qlmarkdown'
 cask 'qlstephen'
 cask 'quicklook-csv'
 cask 'quicklook-json'
+cask 'spotify'
+cask 'steam'
+cask 'sublime-text'
 cask 'suspicious-package'
-cask 'mactex'
+#cask 'vagrant'
+#cask 'virtualbox'
+cask 'vlc'
+cask 'whatsapp'
+cask 'yubikey-personalization-gui'
 
 # Airmail
 # Divvy
