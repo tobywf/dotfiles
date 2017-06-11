@@ -1,21 +1,35 @@
 [user]
     name = Toby Fleming
-    email = tobywf@users.noreply.github.com
+    email = toby.fleming@kogan.com.au
+#    email = tobywf@users.noreply.github.com
 [diff]
     tool = meld
 [merge]
     tool = meld
+#    conflictstyle = diff3
 [difftool]
     prompt = false
 [mergetool]
     prompt = false
     keepBackup = false
+    keepTemporaries = false
 [push]
     default = simple
+[status]
+    showUntrackedFiles = all
 [alias]
     pull = pull --rebase
+    fpush = push --force-with-lease
+    undo = reset --soft HEAD^
+    stash-all = stash save --include-untracked
     serve = !git daemon --verbose --reuseaddr --export-all --strict-paths --base-path=.git .git/
+    prune = fetch --prune
+    glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 [core]
     editor = vim
 [credential]
     helper = osxkeychain
+[color "status"]
+    added = green
+    changed = yellow bold
+    untracked = red bold

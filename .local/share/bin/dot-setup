@@ -14,8 +14,8 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 which brew || /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 chmod 0700 "$HOME/.ssh/"
-find "$HOME/.ssh/" -maxdepth 0 -type f ! -name "*.pub" -exec chmod 0600 {} ';'
-find "$HOME/.ssh/" -maxdepth 0 -type f -name "*.pub" -exec chmod 0644 {} ';'
+find "$HOME/.ssh/" -maxdepth 0 -type f -name "*.pub" -exec chmod 0644 {} +
+find "$HOME/.ssh/" -maxdepth 0 -type f ! -name "*.pub" -exec chmod 0600 {} +
 
 mkdir -p "$HOME/.config/" "$HOME/.local/share/bin/"
 

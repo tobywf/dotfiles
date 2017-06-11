@@ -1,3 +1,7 @@
 {
+    "extensions":
+    [
+        "sls"
+    ],
     "tab_size": 2
 }

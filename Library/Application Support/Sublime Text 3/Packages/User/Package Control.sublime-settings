@@ -6,14 +6,12 @@
 	"installed_packages":
 	[
 		"Anaconda",
-		"Flat Chameleon",
+		"Babel",
 		"GitGutter",
-		"Line Endings Unify",
-		"Markdown Preview",
-		"Monokai Extended",
-		"NASM x86 Assembly",
 		"Package Control",
-		"Robot Framework Assistant",
+		"Pretty JSON",
+		"SublimeLinter",
+		"SublimeLinter-shellcheck",
 		"Theme - Flatland"
 	]
 }

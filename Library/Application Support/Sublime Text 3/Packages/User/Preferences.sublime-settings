@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/Theme - Flatland/Flatland Monokai.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"dictionary": "Packages/Language - English/en_GB.dic",
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
@@ -13,12 +13,10 @@
 	[
 		".git",
 		"__pycache__",
-		"env",
-		"env3",
 		".vagrant"
 	],
 	"font_face": "Source Code Pro",
-	"font_size": 13,
+	"font_size": 16,
 	"highlight_line": true,
 	"ignored_packages":
 	[

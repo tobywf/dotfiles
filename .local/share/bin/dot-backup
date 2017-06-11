@@ -21,7 +21,7 @@ if ! git --git-dir="$HOME/.local/share/dotfiles/" --work-tree="$HOME" \
 fi
 
 # tar everything sensitive
-tar -czf "$HOME/backup-$(date +%Y-%m-%d).tar.gz" \
+tar czf "$HOME/backup-$(date +%Y-%m-%d).tar.gz" \
     -C "$HOME" \
     ".ssh/" ".pypirc" "divvy.txt" \
     "$ONEPASS" \
