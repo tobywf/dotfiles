@@ -8,10 +8,13 @@
 		"Anaconda",
 		"Babel",
 		"GitGutter",
+		"Markdown Extended",
 		"Package Control",
 		"Pretty JSON",
+		"Sass",
 		"SublimeLinter",
 		"SublimeLinter-shellcheck",
+		"Swift",
 		"Theme - Flatland"
 	]
 }

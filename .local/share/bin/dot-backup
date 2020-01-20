@@ -23,9 +23,9 @@ fi
 # tar everything sensitive
 tar czf "$HOME/backup-$(date +%Y-%m-%d).tar.gz" \
     -C "$HOME" \
-    ".ssh/" ".pypirc" "divvy.txt" \
+    ".ssh/" ".aws/credentials" ".pypirc" "divvy.txt" \
     "$ONEPASS" \
     "Library/Application Support/Sublime Text 3/Local/License.sublime_license" \
     ".local/share/fish/fish_history" \
     -C "$HOME/.local/share/bin/" \
-    "dot-bootstrap" \
+    "dot-bootstrap"

@@ -10,7 +10,7 @@ set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 set -x PIP_REQUIRE_VIRTUALENV true
 
 # allow pip on purpose outside a virtualenv
-function gpip3
+function gpip
     env PIP_REQUIRE_VIRTUALENV="" sudo -H /usr/local/bin/pip3 $argv
 end
 
@@ -29,9 +29,6 @@ set -x DOTFILES "$HOME/.local/share/dotfiles/"
 # https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 alias dot "git --git-dir=$DOTFILES --work-tree=$HOME"
 
-set -x PATH "$HOME/.local/share/bin" $PATH
+alias blender "/Applications/Blender.app/Contents/MacOS/Blender"
 
-if command -v docker-machine > /dev/null
-    eval (docker-machine env --shell fish)
-    # set -x DOCKER_IP (docker-machine ip)
-end
+set -a PATH "$HOME/.poetry/bin"

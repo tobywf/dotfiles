@@ -1,12 +1,11 @@
 [user]
     name = Toby Fleming
-    email = toby.fleming@kogan.com.au
-#    email = tobywf@users.noreply.github.com
+    email = tobywf@users.noreply.github.com
+    signingkey = 65299441A7F9F63B
 [diff]
     tool = meld
 [merge]
     tool = meld
-#    conflictstyle = diff3
 [difftool]
     prompt = false
 [mergetool]
@@ -33,3 +32,5 @@
     added = green
     changed = yellow bold
     untracked = red bold
+[commit]
+    gpgsign = true

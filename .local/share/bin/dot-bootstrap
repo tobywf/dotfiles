@@ -22,4 +22,4 @@ open "$HOME/Applications/Divvy.app/"
 open "$HOME/Applications/Flux.app/"
 
 # restore insane divvy config
-open $(cat "$HOME/divvy.txt")
+open "$(cat "$HOME/divvy.txt")"

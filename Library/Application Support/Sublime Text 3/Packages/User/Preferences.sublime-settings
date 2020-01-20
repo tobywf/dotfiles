@@ -1,5 +1,14 @@
 {
-	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"added_words":
+	[
+		"filesize",
+		"rebase",
+		"rebasing",
+		"dialog",
+		"idempotency",
+		"unhandled"
+	],
+	"color_scheme": "Packages/User/SublimeLinter/Flatland Monokai (SL).tmTheme",
 	"dictionary": "Packages/Language - English/en_GB.dic",
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
@@ -13,7 +22,8 @@
 	[
 		".git",
 		"__pycache__",
-		".vagrant"
+		".vagrant",
+		"*.egg-info"
 	],
 	"font_face": "Source Code Pro",
 	"font_size": 16,
@@ -22,6 +32,7 @@
 	[
 		"Vintage"
 	],
+	"index_files": false,
 	"rulers":
 	[
 		70,

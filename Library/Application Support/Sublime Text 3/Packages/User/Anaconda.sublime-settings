@@ -5,5 +5,9 @@
     //"display_signatures": false,
     //"pep8": false,
     "pep8_max_line_length": 120,
+    "pep8_ignore": [
+        "E203", // clashes with black
+        "W503"  // clashes with black
+    ]
     //"anaconda_linting": false,
 }

@@ -1,45 +1,88 @@
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
-tap 'homebrew/bundle'
-tap 'homebrew/core'
-tap 'homebrew/dupes'
-tap 'homebrew/python'
-
-brew 'coreutils'
-brew 'findutils', args: ['with-default-names']
-brew 'fish'
-brew 'git'
-brew 'grep', args: ['with-default-names']
-brew 'imagemagick', args: ['with-librsvg', 'with-webp']
-brew 'python2'
-brew 'python3'
-brew 'reattach-to-user-namespace'
-brew 'rename'
-brew 'shellcheck'
-brew 'ssh-copy-id'
-brew 'tmux'
-brew 'tree'
-brew 'vim', args: ['with-override-system-vi']
-brew 'brotli'
-brew 'zopfli'
-
-cask 'font-anonymice-powerline'
-cask 'font-anonymous-pro'
-cask 'font-source-code-pro'
-cask 'font-source-code-pro-for-powerline'
-
-cask 'google-chrome'
-cask 'iterm2'
-cask 'spotify'
-cask 'sublime-text'
-# meld
-cask 'https://gist.githubusercontent.com/tobywf/f731a9aa9ebaec47bb098af9d90cb8b5/raw/1f6acffb47d89a1e9eb32fbb5acea7bd4a065575/meldmerge.rb'
-
-cask 'quicklook-csv'
-cask 'quicklook-json'
-
-# cask 'qlcolorcode'
-# cask 'qlimagesize'
-# cask 'qlmarkdown'
-# cask 'qlstephen'
-# cask 'suspicious-package'
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "mkchoi212/fac", "https://github.com/mkchoi212/fac.git"
+brew "autoconf"
+brew "automake"
+brew "python"
+brew "awscli"
+brew "bash"
+brew "bat"
+brew "bchunk"
+brew "bfg"
+brew "brotli"
+brew "cloc"
+brew "colordiff"
+brew "coreutils"
+brew "dhex"
+brew "sdl2"
+brew "ffmpeg", args: ["with-freetype"]
+brew "findutils", args: ["with-default-names"]
+brew "fish"
+brew "gdb"
+brew "ghostscript", link: false
+brew "gifsicle"
+brew "git"
+brew "gnu-time"
+brew "gnupg"
+brew "gradle"
+brew "grep"
+brew "hexcurse"
+brew "hexyl"
+brew "id3v2"
+brew "imagemagick", args: ["with-librsvg"]
+brew "ipython"
+brew "jq"
+brew "mas"
+brew "youtube-dl"
+brew "mpv"
+brew "ncdu"
+brew "nmap", link: false
+brew "node"
+brew "pandoc"
+brew "pre-commit"
+brew "radare2"
+brew "reattach-to-user-namespace"
+brew "rename"
+brew "sassc"
+brew "sdl"
+brew "shellcheck"
+brew "ssh-copy-id"
+brew "swig"
+brew "tmux"
+brew "tree"
+brew "unrar"
+brew "unshield"
+brew "vbindiff"
+brew "vim", link: false
+brew "zopfli"
+cask "divvy"
+cask "doxie"
+cask "font-anonymice-powerline"
+cask "font-anonymous-pro"
+cask "font-source-code-pro"
+cask "font-source-code-pro-for-powerline"
+cask "font-source-sans-pro"
+cask "font-source-serif-pro"
+cask "google-chrome"
+cask "iterm2"
+cask "java8"
+cask "karabiner-elements"
+cask "mactex"
+cask "meldmerge"
+cask "nordvpn"
+cask "spotify"
+cask "sublime-text"
+cask "virtualbox"
+cask "webpquicklook"
+mas "Airmail 3", id: 918858936
+mas "Amphetamine", id: 937984704
+mas "Install macOS Catalina", id: 0
+mas "Install macOS Catalina", id: 0
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Pixelmator", id: 407963104
+mas "The Unarchiver", id: 425424353
